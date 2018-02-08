@@ -4,7 +4,7 @@ import (
     "encoding/json"
     "log"
     "net/http"
-    "github.com/gorilla/mux"
+    mux "github.com/gorilla/mux"
 )
 
 // our main function
@@ -14,10 +14,12 @@ type Person struct {
     Lastname  string   `json:"lastname,omitempty"`
     Address   *Address `json:"address,omitempty"`
 }
+
 type Address struct {
     City  string `json:"city,omitempty"`
     State string `json:"state,omitempty"`
 }
+
 func main() {
 
 	
@@ -32,6 +34,7 @@ func main() {
     router.HandleFunc("/people/{id}", DeletePerson).Methods("DELETE")
     log.Fatal(http.ListenAndServe(":8080", router))
 }
+
 var people []Person
 func GetPeople(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(people)
@@ -60,8 +63,9 @@ func DeletePerson(w http.ResponseWriter, r *http.Request) {
         if item.ID == params["id"] {
            people = append(people[:index], people[index+1:]...)
             break
+        }
     }
     json.NewEncoder(w).Encode(people)
 }
-}
+
 
