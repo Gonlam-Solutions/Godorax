@@ -1,17 +1,17 @@
 package main
 
 import (
-	databasePkg "Godorax/database"
-
+	database "Godorax/database"
+	encrypter "Godorax/encrypter"
 	"log"
 )
 
 func main() {
-	db, err := databasePkg.ConnectToDatabase("NEITHANJU49GC12", "root", "GODORAXDB")
+	db, err := database.ConnectToDatabase("NEITHANJU49GC12", "root", "GODORAXDB")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	encryptedPassword := databasePkg.EncryptData("julito94")
-	databasePkg.StoreData(encryptedPassword, db, "GDACCESS", "PASSWORD")
+	encryptedPassword := encrypter.EncryptData("julito94")
+	database.StoreData(encryptedPassword, db, "GDACCESS", "PASSWORD")
 }
