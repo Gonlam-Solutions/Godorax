@@ -30,7 +30,7 @@ func StoreData(data string, database *sql.DB, table string, field string) error 
 		log.Fatal(err)
 	}
 
-	res, err := stmt.Exec("julio", data)
+	res, err := stmt.Exec("ju", data)
 	if err != nil {
 		log.Fatal(err)
 	}
