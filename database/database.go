@@ -22,29 +22,3 @@ func ConnectToDatabase(password string, user string, databaseName string) (*sql.
 
 	return db, err
 }
-
-// StoreData saves our string to our database
-func StoreData(data string, database *sql.DB, table string, field string) error {
-	stmt, err := database.Prepare("INSERT INTO " + table + "(" + "USERNAME, " + field + ") " + "VALUES(?, ?)")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	res, err := stmt.Exec("ju", data)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	lastID, err := res.LastInsertId()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	rowCnt, err := res.RowsAffected()
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("ID = %d, affected = %d\n", lastID, rowCnt)
-
-	return err
-}
