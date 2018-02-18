@@ -1,5 +1,8 @@
 package resources
 
+//MainDatabaseAddress is the address to the main database
+const MainDatabaseAddress = "127.0.0.1:3306"
+
 //MainDatabase is the name of the main databased consumed by this application
 const MainDatabase = "GODORAXDB"
 

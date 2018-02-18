@@ -9,8 +9,8 @@ import (
 )
 
 // ConnectToDatabase opens a new connection to our database, mysql in this case
-func ConnectToDatabase(password string, user string, databaseName string) (*sql.DB, error) {
-	db, err := sql.Open("mysql", user+":"+password+"@tcp(127.0.0.1:3306)/"+databaseName)
+func ConnectToDatabase(databaseName string, databaseAddress string, user string, password string) (*sql.DB, error) {
+	db, err := sql.Open("mysql", user+":"+password+"@tcp("+databaseAddress+")/"+databaseName)
 	if err != nil {
 		log.Fatal(err)
 	}
