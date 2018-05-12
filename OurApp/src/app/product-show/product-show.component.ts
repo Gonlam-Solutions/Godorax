@@ -9,13 +9,12 @@ import { ProductService } from '../product.service';
 })
 export class ProductShowComponent implements OnInit {
 
-  productToShow: Product;
+  @Input() productToShow: Product;
 
   constructor() {   }
 
   ngOnInit() {
     const serviceProdcut = new ProductService();
-    this.productToShow = serviceProdcut.generateProduct();
   }
 
 }

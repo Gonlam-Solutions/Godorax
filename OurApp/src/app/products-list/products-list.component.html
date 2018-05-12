@@ -1,3 +1,7 @@
-<section class="row">
-    <app-product-show class="col-md-3"></app-product-show>
+<section class="row ">
+  <app-product-show  [productToShow]="product" class=" col-lg-3 col-md-6 col-sm-12"
+   style="width: 18rem;" *ngFor="let product of products; let i of index">
+  </app-product-show>
 </section>
+
+<!-- [class.elevate]="hovered===i" (mouseover)="hovered=i"(mouseout)="hovered=-1" -->
