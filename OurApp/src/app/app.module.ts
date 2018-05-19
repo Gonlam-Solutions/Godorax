@@ -7,9 +7,13 @@ import { ProductShowComponent } from './product-show/product-show.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { MesaslistComponent } from './mesaslist/mesaslist.component';
+import { MesaShowComponent } from './mesa-show/mesa-show.component';
 
 const routes: Routes = [
   {path: 'products', component: ProductsListComponent},
+  {path: 'mesas', component: MesaslistComponent},
+  {path: 'mesas/:paramId', component: MesaShowComponent},
   {path: 'products/:paramId', component: ProductDetailsComponent},
   {path: '', redirectTo: 'products', pathMatch: 'full'},
 ];
@@ -19,7 +23,9 @@ const routes: Routes = [
     AppComponent,
     ProductShowComponent,
     ProductDetailsComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    MesaslistComponent,
+    MesaShowComponent
   ],
   imports: [
     BrowserModule,

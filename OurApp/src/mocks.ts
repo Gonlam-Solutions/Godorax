@@ -1,4 +1,4 @@
-import {Product} from './models';
+import {Product, Mesa} from './models';
 
 export const MOCK_PRODUCTS: Product[] = [
   {
@@ -33,3 +33,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 34,
     ingredients: ['letuces', 'salt', 'potatoes']
   }];
+
+  export const MOCK_TABLES: Mesa[] = [
+    new Mesa([], 1),
+    new Mesa([], 2)];
