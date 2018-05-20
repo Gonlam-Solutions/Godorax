@@ -1,3 +1,35 @@
-<p>
-  mesa-show works! {{mesa.id}}
-</p>
+<div class="row">
+  <div class="col-md-3">
+    <section class="card bg-dark text-white" >
+      <div class="card-header bg-dark">
+        <h5 class="card-title"><strong>Mesa {{mesa.id}}</strong></h5>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-md-8">
+    <section class="card bg-light mb-3">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="card-header">
+            <h5 class="card-title">Products</h5>
+          </div>
+          <div *ngFor="let product of mesa.buyedProducts" class="card-body">
+            <p class="card-text">Product: {{product.name}}</p>
+            <p class="card-text">Price: {{product.price}} $</p>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="card-header">
+            <h5 class="card-title">Total</h5>
+          </div>
+          <div class="card-body">
+          <p class="card-text"> Price: {{totalPrice()}}</p>
+        </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>
+<button (click)=goBack() class="btn btn-primary">Add products</button>
+

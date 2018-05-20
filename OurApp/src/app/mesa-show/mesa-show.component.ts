@@ -25,6 +25,15 @@ export class MesaShowComponent implements OnInit {
       });
     }
 
+    totalPrice(): Number {
+      let res = 0;
+      for (const product of this.mesa.buyedProducts) {
+        res += product.price;
+      }
+      return res;
+
+    }
+
     goBack() {
       this.location.back();
     }

@@ -35,5 +35,20 @@ export const MOCK_PRODUCTS: Product[] = [
   }];
 
   export const MOCK_TABLES: Mesa[] = [
-    new Mesa([], 1),
+    new Mesa([{
+      id: 1,
+      name: 'coffe',
+      description: 'bolivian coffe from farmers of the south',
+      photo: 'assets/img/1.jpeg',
+      price: 32,
+      ingredients: ['coffe', 'milk', 'water']
+    },
+    {
+      id: 2,
+      name: 'beer',
+      description: 'german beer',
+      photo: 'assets/img/1.jpeg',
+      price: 23,
+      ingredients: ['trigo', 'malta']
+    }], 1),
     new Mesa([], 2)];
