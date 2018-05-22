@@ -1,13 +1,12 @@
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-11 col-center col-mb-3 ">
     <section class="card bg-dark text-white" >
       <div class="card-header bg-dark">
         <h5 class="card-title"><strong>Mesa {{mesa.id}}</strong></h5>
       </div>
     </section>
   </div>
-
-  <div class="col-md-8">
+  <div class="col-md-8 col-center">
     <section class="card bg-light mb-3">
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
@@ -31,5 +30,7 @@
     </section>
   </div>
 </div>
+<div style="text-align: center">
+<button (click)=goBack() class="btn btn-primary">Go back!</button>
 <button (click)=goBack() class="btn btn-primary">Add products</button>
-
+</div>
