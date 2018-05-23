@@ -19,15 +19,11 @@ export class Product {
 }
 
 export class Mesa {
-  buyedProducts: Product[];
+  buyedProducts: number[];
   id: number;
 
-  constructor(buyedProducts: Product[],  id: number) {
+  constructor(buyedProducts: number[],  id: number) {
     this.buyedProducts = buyedProducts;
     this.id = id;
-  }
-
-  addProduct(product: Product) {
-    this.buyedProducts.push(product);
   }
 }

@@ -1,0 +1,9 @@
+.bottom{
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+}
+.center {
+ margin: auto;
+ padding: 10px;
+}

@@ -13,8 +13,8 @@
           <div class="card-header">
             <h5 class="card-title">Products</h5>
           </div>
-          <div *ngFor="let product of mesa.buyedProducts" class="card-body">
-            <p class="card-text">Product: {{product.name}}</p>
+          <div *ngFor="let product of productos" class="card-body">
+            <p class="card-text">Product: <strong>{{product.name}}</strong></p>
             <p class="card-text">Price: {{product.price}} $</p>
           </div>
         </li>
@@ -23,7 +23,7 @@
             <h5 class="card-title">Total</h5>
           </div>
           <div class="card-body">
-          <p class="card-text"> Price: {{totalPrice()}}</p>
+          <p class="card-text"> Price: <strong>{{totalPrice()}} $</strong></p>
         </div>
         </li>
       </ul>
@@ -32,5 +32,6 @@
 </div>
 <div style="text-align: center">
 <button (click)=goBack() class="btn btn-primary">Go back!</button>
-<button (click)=goBack() class="btn btn-primary">Add products</button>
+<button routerLink="Products" class="btn btn-primary">Add products</button>
+<button  (click)=goBack() class="btn btn-danger">Cerrar Cuenta</button>
 </div>

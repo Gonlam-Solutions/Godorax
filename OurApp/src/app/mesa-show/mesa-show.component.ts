@@ -13,6 +13,7 @@ import { MOCK_TABLES } from '../../mocks';
 export class MesaShowComponent implements OnInit {
 
     mesa: Mesa;
+    productos: Product [] = [];
 
     constructor( private location: Location, private route: ActivatedRoute) { }
 
@@ -23,11 +24,14 @@ export class MesaShowComponent implements OnInit {
         this.mesa = MOCK_TABLES[param1 - 1];
         }
       });
+      this.mesa.buyedProducts.forEach(
+          product => { this.productos.push(new ProductService().getProductById(product));
+      });
     }
 
     totalPrice(): Number {
       let res = 0;
-      for (const product of this.mesa.buyedProducts) {
+      for (const product of this.productos) {
         res += product.price;
       }
       return res;

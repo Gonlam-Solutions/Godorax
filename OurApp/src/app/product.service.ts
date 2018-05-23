@@ -8,7 +8,7 @@ export class ProductService {
 
   constructor() { }
 
-  generateProduct(): Product[] {
+  getProducts(): Product[] {
     return MOCK_PRODUCTS;
 
   }

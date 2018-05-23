@@ -1,0 +1,14 @@
+[
+    {
+        "buyedProducts": "[1,2]",
+        "id": "1"
+    },
+    {
+      "buyedProducts": "[]",
+        "id": "2"
+    },
+    {
+      "buyedProducts": "[]",
+        "id": "3"
+    }
+  ]

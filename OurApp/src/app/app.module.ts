@@ -9,11 +9,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { MesaslistComponent } from './mesaslist/mesaslist.component';
 import { MesaShowComponent } from './mesa-show/mesa-show.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MesaAddProductComponent } from './mesa-add-product/mesa-add-product.component';
+import { AppProductShowMesaComponent } from './app-product-show-mesa/app-product-show-mesa.component';
+
 
 const routes: Routes = [
   {path: 'products', component: ProductsListComponent},
   {path: 'mesas', component: MesaslistComponent},
   {path: 'mesas/:paramId', component: MesaShowComponent},
+  {path: 'mesas/:paramId/Products', component: MesaAddProductComponent},
   {path: 'products/:paramId', component: ProductDetailsComponent},
   {path: '', redirectTo: 'products', pathMatch: 'full'},
 ];
@@ -25,11 +30,14 @@ const routes: Routes = [
     ProductDetailsComponent,
     ProductsListComponent,
     MesaslistComponent,
-    MesaShowComponent
+    MesaShowComponent,
+    MesaAddProductComponent,
+    AppProductShowMesaComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
