@@ -1,8 +1,8 @@
 # Godorax
-##Instructions for installation
+## Instructions for installation
 
 
-###Requirements
+###### Requirements
 
 node.js is required in order to use npm and install and run the aplication.
 You can download it here: https://nodejs.org/en/download/
@@ -19,7 +19,7 @@ In order to implements the alerts, we will also need to install the bootstrap fo
 
 `npm install --save @ng-bootstrap/ng-bootstrap`
 
-###Launchin the app
+###### Launchin the app
 
 With this we are set up to run the apllication, now th next step is to build the app with
 
