@@ -1,3 +1,4 @@
+import { DBService } from './../../db.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models';
 import { ProductService } from '../product.service';
@@ -7,16 +8,18 @@ import { ProductService } from '../product.service';
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.css']
 })
+
 export class ProductsListComponent implements OnInit {
 
-   products: Product[];
+   products: Product[] = [];
 
 
-  constructor() { }
+  constructor(private DbService: DBService) { }
 
   ngOnInit() {
-     const serviceProdcut = new ProductService();
-     this.products = serviceProdcut.getProducts();
+    this.DbService.getAllProducts().subscribe(products => {
+    this.products = products;
+   });
   }
 
 }

@@ -1,3 +1,5 @@
+import { Relation } from './../../models';
+import { DBService } from './../../db.service';
 import { Component, OnInit } from '@angular/core';
 import { Product, Mesa } from '../../models';
 import { ProductService } from '../product.service';
@@ -12,35 +14,42 @@ import { MOCK_TABLES } from '../../mocks';
 })
 export class MesaShowComponent implements OnInit {
 
-    mesa: Mesa;
-    productos: Product [] = [];
+    Relations: Relation[] = [];
+    Products: Product[] = [];
+    mesa: Number;
 
-    constructor( private location: Location, private route: ActivatedRoute) { }
+    constructor( private location: Location, private route: ActivatedRoute, private DbService: DBService) { }
 
     ngOnInit() {
       this.route.paramMap.subscribe((params: ParamMap) => {
-        const param1 = Number(params.get('paramId'));
-        if (!isNaN(param1)) {
-        this.mesa = MOCK_TABLES[param1 - 1];
-        }
-      });
-      this.mesa.buyedProducts.forEach(
-          product => { this.productos.push(new ProductService().getProductById(product));
+        const param1 = String(params.get('paramId'));
+        this.DbService.getRelationsFromTableById(param1).subscribe( relations => {
+          this.Relations = relations;
+          relations.forEach(relation => {
+            this.DbService.getProductById(relation.product).subscribe( product => {
+            this.Products.push(product);
+            });
+          });
+        });
+        this.mesa = Number(param1);
       });
     }
 
     totalPrice(): Number {
       let res = 0;
-      for (const product of this.productos) {
+      for (const product of this.Products) {
         res += product.price;
       }
       return res;
-
     }
 
     goBack() {
       this.location.back();
     }
 
+    deleteThis() {
+      this.DbService.deleteTableByNumber(this.mesa);
+      this.location.back();
+    }
 
 }

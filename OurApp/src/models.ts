@@ -1,14 +1,14 @@
 
 export class Product {
-  id: number;
+  _id: String;
   price: number;
   name: string;
   ingredients: string[];
   photo: string;
   description: string;
 
-  constructor(id: number, price: number, name: string, ingredients: string[], photo: string, description: string) {
-    this.id = id;
+  constructor(id: String, price: number, name: string, ingredients: string[], photo: string, description: string) {
+    this._id = id;
     this.price = price;
     this.name = name;
     this.ingredients = ingredients;
@@ -19,11 +19,22 @@ export class Product {
 }
 
 export class Mesa {
-  buyedProducts: number[];
-  id: number;
+  tableNumber: number;
+  _id: String;
 
-  constructor(buyedProducts: number[],  id: number) {
-    this.buyedProducts = buyedProducts;
-    this.id = id;
+  constructor(tn: number, id: String) {
+    this.tableNumber = tn;
+    this._id = id;
   }
+}
+export class Relation {
+    _id: String;
+    table: number;
+    product: String;
+
+    constructor (id: String, tn: number, product: String) {
+      this.table = tn;
+      this._id = id;
+      this.product = product;
+    }
 }

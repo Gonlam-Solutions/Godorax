@@ -1,3 +1,4 @@
+import { DBService } from './../../db.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../../models';
@@ -11,14 +12,17 @@ import { Router } from '@angular/router';
 export class AppProductShowMesaComponent implements OnInit {
 
   @Input() productToShow: Product;
+  @Input() mesa: Number;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, private DbService: DBService) { }
 
   ngOnInit() {
     const serviceProdcut = new ProductService();
   }
 
   AddProduct() {
+    const relation = {table: this.mesa, product: this.productToShow._id};
+    this.DbService.createRelation(relation);
   }
 
 }

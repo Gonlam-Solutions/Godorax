@@ -1,3 +1,4 @@
+import { DBService } from './../../db.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models';
 import { ProductService } from '../product.service';
@@ -14,15 +15,15 @@ export class ProductDetailsComponent implements OnInit {
 
   productToShow: Product;
 
-  constructor( private location: Location, private route: ActivatedRoute) { }
+  constructor( private location: Location, private route: ActivatedRoute, private DbService: DBService) { }
 
   ngOnInit() {
     const serviceProdcut = new ProductService();
     this.route.paramMap.subscribe((params: ParamMap) => {
-      const param1 = Number(params.get('paramId'));
-      if (!isNaN(param1)) {
-      this.productToShow = serviceProdcut.getProductById(param1);
-      }
+      const param1 = String(params.get('paramId'));
+      this.DbService.getProductById(param1).subscribe(product =>
+        this.productToShow = product
+      );
     });
   }
 

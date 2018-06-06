@@ -2,7 +2,7 @@ import {Product, Mesa} from './models';
 
 export const MOCK_PRODUCTS: Product[] = [
   {
-    id: 1,
+    _id: 'asas',
     name: 'coffe',
     description: 'bolivian coffe from farmers of the south',
     photo: 'assets/img/1.jpeg',
@@ -10,7 +10,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ingredients: ['coffe', 'milk', 'water']
   },
   {
-    id: 2,
+    _id: 'pasas',
     name: 'beer',
     description: 'german beer',
     // tslint:disable-next-line:max-line-length
@@ -19,7 +19,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ingredients: ['trigo', 'malta']
   },
   {
-    id: 1,
+    _id: 'casas',
     name: 'meat',
     description: 'pig meat with potatoes',
     // tslint:disable-next-line:max-line-length
@@ -28,7 +28,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ingredients: ['pig', 'potatoes', 'species']
   },
   {
-    id: 4,
+    _id: 'nasas',
     name: 'salad',
     description: 'potato salad',
     photo: 'https://realhousemoms.com/wp-content/uploads/Berry-Avocado-Grilled-Chicken-Salad-IG.jpg',
@@ -37,5 +37,5 @@ export const MOCK_PRODUCTS: Product[] = [
   }];
 
   export const MOCK_TABLES: Mesa[] = [
-    new Mesa([1, 2], 1),
-    new Mesa([], 2)];
+    new Mesa(1, 'aasdsa'),
+    new Mesa(2, 'adasdsad')];
