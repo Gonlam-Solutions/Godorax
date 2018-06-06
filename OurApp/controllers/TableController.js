@@ -1,4 +1,6 @@
 const Table = require("../models/Table");
+const Relation = require("../models/Relation");
+
 
 exports.listAllTables = (req, res) => {
   Table.find({}, (err, Table) => {
@@ -43,7 +45,6 @@ exports.updateTable = (req, res) => {
 };
 
 exports.deleteTable = (req, res) => {
-  console.log(req.params.Tableid);
   Table.findOneAndRemove({ _id: req.params.Tableid }, (err, Table) => {
     if (err) {
       res.status(404).send(err);
@@ -53,8 +54,13 @@ exports.deleteTable = (req, res) => {
 };
 
   exports.deleteTableBynumber = (req, res) => {
-    console.log(req.params.Tableid);
-    Table.findOneAndRemove({ tableNumber: req.params.Tableid }, (err, Table) => {
+    const tid= req.params.Tableid;
+    Relation.deleteMany({table: tid }, (err) => {
+      if (err) {
+        res.status(404).send(err);
+      }
+    });
+    Table.findOneAndRemove({ tableNumber: tid }, (err, Table) => {
       if (err) {
         res.status(404).send(err);
       }

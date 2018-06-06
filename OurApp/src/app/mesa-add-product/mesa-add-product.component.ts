@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models';
 import { ProductService } from '../product.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import {AlertCenterService, Alert, AlertType} from 'ng2-alert-center';
+
 
 @Component({
   selector: 'app-mesa-add-product',

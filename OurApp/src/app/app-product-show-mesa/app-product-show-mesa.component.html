@@ -6,3 +6,6 @@
     <div class="card-img-overlay">
     </div>
   </button>
+  <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null" [dismissible]="false">
+      <strong>{{ successMessage }}</strong>
+  </ngb-alert>

@@ -1,6 +1,7 @@
 import { DBService } from './../db.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ const routes: Routes = [
     AppProductShowMesaComponent
   ],
   imports: [
+    NgbModule.forRoot(),
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,

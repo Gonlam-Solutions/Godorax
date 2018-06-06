@@ -10,6 +10,10 @@ npm install -g @angular/cli
 
 npm install mongoose
 
+In order to implements the alerts, we will also need to install the bootstrap for angular
+
+npm install --save @ng-bootstrap/ng-bootstrap
+
 With this we are set up to run the apllication, now th next step is to build the app
 
 ng build
