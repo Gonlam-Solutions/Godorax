@@ -1,25 +1,32 @@
 # Godorax
-Instructions for installation
+##Instructions for installation
+
+
+###Requirements
 
 node.js is required in order to use npm and install and run the aplication.
 You can download it here: https://nodejs.org/en/download/
 
-Once you have it you must open from a console the directory OurApp, and install angular/cli and mongosee
+Once you have it you must open from a console the directory OurApp, and install angular/cli and mongosee using
 
-npm install -g @angular/cli
+`npm install -g @angular/cli`
 
-npm install mongoose
+and then
 
-In order to implements the alerts, we will also need to install the bootstrap for angular
+`npm install mongoose`
 
-npm install --save @ng-bootstrap/ng-bootstrap
+In order to implements the alerts, we will also need to install the bootstrap for angular using
 
-With this we are set up to run the apllication, now th next step is to build the app
+`npm install --save @ng-bootstrap/ng-bootstrap`
 
-ng build
+###Launchin the app
+
+With this we are set up to run the apllication, now th next step is to build the app with
+
+`ng build`
 
 And after that a directory dist will be created with our application, to make it work and run the connection with the Database we use
 
-node server.js
+`node server.js`
 
-And then enter to localhost:300 in order to try the app.
+And then enter to **localhost:3000** in order to try the app.
