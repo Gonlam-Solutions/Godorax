@@ -31,7 +31,7 @@ export class AppProductShowMesaComponent implements OnInit {
     const serviceProdcut = new ProductService();
     this._success.subscribe((message) => this.successMessage = message);
     this._success.pipe(
-      debounceTime(1000)
+      debounceTime(500)
     ).subscribe(() => this.successMessage = null);
   }
 
