@@ -21,8 +21,8 @@ import { FormsModule} from '@angular/forms';
 const routes: Routes = [
   {path: 'products', component: ProductsListComponent},
   {path: 'mesas', component: MesaslistComponent},
-  {path: 'mesas/:paramId', component: MesaShowComponent},
-  {path: 'mesas/:paramId/Products', component: MesaAddProductComponent},
+  {path: 'mesas/:paramId/Bill', component: MesaShowComponent},
+  {path: 'mesas/:paramId', component: MesaAddProductComponent},
   {path: 'products/:paramId', component: ProductDetailsComponent},
   {path: '', redirectTo: 'products', pathMatch: 'full'},
 ];

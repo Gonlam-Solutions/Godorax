@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { DBService } from './../../db.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models';
@@ -17,7 +18,7 @@ export class MesaAddProductComponent implements OnInit {
   products: Product[] = [];
   mesa: Number;
 
-  constructor (private DbService: DBService, private route: ActivatedRoute) { }
+  constructor (private DbService: DBService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.DbService.getAllProducts().subscribe(products =>
@@ -25,6 +26,9 @@ export class MesaAddProductComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.mesa = Number(params.get('paramId'));
     });
+  }
+  goBack() {
+    this.location.back();
   }
 
 }

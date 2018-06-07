@@ -49,7 +49,7 @@ export class MesaShowComponent implements OnInit {
 
     deleteThis() {
       this.DbService.deleteTableByNumber(this.mesa);
-      this.location.back();
+      this.location.go('http://localhost:3000/mesas');
     }
 
 }

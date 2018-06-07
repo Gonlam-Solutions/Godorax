@@ -3,3 +3,9 @@
      style="width: 18rem;" *ngFor="let product of products; let i of index">
     </app-app-product-show-mesa>
   </section>
+  <br>
+  <div style="text-align: center">
+    <button (click)=goBack() class="btn btn-primary">Go back!</button>
+    <button routerLink="Bill" class="btn btn-primary">Bill</button>
+  </div>
+
