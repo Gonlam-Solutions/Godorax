@@ -61,4 +61,12 @@ export class DBService {
       .catch(this.handleError);
   }
 
+  deleteRelation(relation: any) {
+    return this.http.delete('api/relation/' + relation.table + '/' + relation.product)
+    .toPromise()
+    .catch(this.handleError);
+  }
+
 }
+
+

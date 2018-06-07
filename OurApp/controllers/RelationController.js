@@ -52,7 +52,7 @@ exports.updateRelation = (req, res) => {
 };
 
 exports.deleteRelation = (req, res) => {
-  Relation.findOneAndRemove({ _id: req.params.Relationid }, (err, Relation) => {
+  Relation.findOneAndRemove({ table: req.params.Tableid, product: req.params.Productid }, (err, Relation) => {
     if (err) {
       res.status(404).send(err);
     }

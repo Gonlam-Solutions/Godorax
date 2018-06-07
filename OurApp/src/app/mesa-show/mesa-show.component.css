@@ -3,3 +3,7 @@
   margin: 0 auto;
   margin-bottom: 20px;
 }
+.right{
+  position: absolute;
+  right: 2.5%;
+}

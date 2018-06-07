@@ -49,10 +49,13 @@ app
   .post(RelationController.createNewRelation);
 
 app
+  .route("/api/relation/:Tableid/:Productid")
+  .delete(RelationController.deleteRelation);
+
+app
   .route("/api/relation/:Relationid")
   .get(RelationController.readRelation)
-  .post(RelationController.updateRelation)
-  .delete(RelationController.deleteRelation);
+  .post(RelationController.updateRelation);
 
 
 // Catch all other routes and return the index file

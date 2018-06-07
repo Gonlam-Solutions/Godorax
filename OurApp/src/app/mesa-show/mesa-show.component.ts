@@ -52,4 +52,10 @@ export class MesaShowComponent implements OnInit {
       this.location.go('http://localhost:3000/mesas');
     }
 
+    deleteRelation(pid) {
+      const relation = {table: this.mesa, product: pid};
+      this.DbService.deleteRelation(relation);
+      window.location.reload();
+    }
+
 }

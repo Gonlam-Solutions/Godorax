@@ -14,8 +14,9 @@
             <h5 class="card-title">Products</h5>
           </div>
           <div *ngFor="let product of Products" class="card-body">
-            <p class="card-text">Product: <strong>{{product.name}}</strong></p>
-            <p class="card-text">Price: {{product.price}} $</p>
+            <p class="card-text text ">Product: <strong>{{product.name}}</strong></p>
+            <button class=" btn btn-danger right" (click)="deleteRelation(product._id)" >Delete</button>
+            <p class="card-text ">Price: {{product.price}} $</p>
           </div>
         </li>
         <li class="list-group-item">
