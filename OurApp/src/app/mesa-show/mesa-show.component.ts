@@ -49,7 +49,12 @@ export class MesaShowComponent implements OnInit {
 
     deleteThis() {
       this.DbService.deleteTableByNumber(this.mesa);
-      this.location.go('http://localhost:3000/mesas');
+      window.location.href = 'http://localhost:3000/mesas';
+    }
+
+    seeTables() {
+      window.location.href = 'http://localhost:3000/mesas';
+
     }
 
     deleteRelation(pid) {
