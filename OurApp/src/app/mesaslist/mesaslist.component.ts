@@ -34,8 +34,7 @@ export class MesaslistComponent implements OnInit {
     // const id = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 15);
     const mesa = {tableNumber: val};
     this.DbService.createTable(mesa);
-    window.location.reload();
-
+    this.ngOnInit();
     /* Codigo para funcionamiento con el MOCK
     const val = MOCK_TABLES[MOCK_TABLES.length - 1].id;
     MOCK_TABLES.push(new Mesa([], val + 1));
