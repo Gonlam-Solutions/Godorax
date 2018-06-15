@@ -21,7 +21,6 @@ export class MesaShowComponent implements OnInit {
     constructor( private location: Location, private route: ActivatedRoute, private DbService: DBService) { }
 
     ngOnInit() {
-      this.Products = [];
       this.route.paramMap.subscribe((params: ParamMap) => {
         const param1 = String(params.get('paramId'));
         this.DbService.getRelationsFromTableById(param1).subscribe( relations => {
@@ -61,7 +60,6 @@ export class MesaShowComponent implements OnInit {
     deleteRelation(pid) {
       const relation = {table: this.mesa, product: pid};
       this.DbService.deleteRelation(relation);
-      this.ngOnInit();
       delete this.Products[pid];
     }
 
