@@ -27,6 +27,15 @@ exports.readProduct = (req, res) => {
     res.status(200).json(Product);
   });
 };
+exports.filterProducts = (req, res) => {
+  Product.find({name: req.params.Text}, (err, Product) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.status(200).json(Product);
+  });
+};
+
 
 exports.updateProduct = (req, res) => {
   Product.findOneAndUpdate(

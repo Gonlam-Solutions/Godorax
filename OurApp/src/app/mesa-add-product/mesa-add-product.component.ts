@@ -16,19 +16,28 @@ import {AlertCenterService, Alert, AlertType} from 'ng2-alert-center';
 export class MesaAddProductComponent implements OnInit {
 
   products: Product[] = [];
+  Allproducts: Product[] = [];
   mesa: Number;
 
   constructor (private DbService: DBService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
-    this.DbService.getAllProducts().subscribe(products =>
-    this.products = products);
+    this.DbService.getAllProducts().subscribe(products => {
+      this.products = products;
+      this.Allproducts = products;
+    });
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.mesa = Number(params.get('paramId'));
+    this.mesa = Number(params.get('paramId'));
     });
   }
+
   goBack() {
     this.location.back();
   }
 
+  Searching(event) {
+    this.products = this.Allproducts.filter(product => {
+      return product.name.includes(event.target.value);
+    });
+  }
 }

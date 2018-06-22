@@ -64,5 +64,4 @@ export class MesaShowComponent implements OnInit {
       this.ngOnInit();
       delete this.Products[pid];
     }
-
 }

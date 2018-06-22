@@ -24,6 +24,13 @@ export class DBService {
       })
     );
   }
+  getAllProductsFiltered(text: String) {
+    return this.http.get('/api/products/filter/' + text).pipe(
+      map((res) => {
+        return res.json();
+      })
+    );
+  }
 
   getProductById(Id: String) {
     return this.http.get('api/products/' + Id).pipe(

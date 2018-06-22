@@ -36,7 +36,8 @@ const routes: Routes = [
     MesaslistComponent,
     MesaShowComponent,
     MesaAddProductComponent,
-    AppProductShowMesaComponent
+    AppProductShowMesaComponent,
+
   ],
   imports: [
     NgbModule.forRoot(),

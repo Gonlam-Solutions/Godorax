@@ -33,6 +33,9 @@ app
   .delete(ProductController.deleteProduct);
 
 app
+  .route("/api/products/filter/:Text")
+  .get(ProductController.filterProducts)
+app
   .route("/api/tables")
   .get(TableController.listAllTables)
   .post(TableController.createNewTable);
