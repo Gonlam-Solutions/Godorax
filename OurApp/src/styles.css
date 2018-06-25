@@ -1,3 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
+
+
+
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+
+.main-idx {
+  min-height: 100%;
+  position: relative;
+}

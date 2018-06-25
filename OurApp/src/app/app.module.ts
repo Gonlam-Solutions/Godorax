@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'mesas/:paramId/Bill', component: MesaShowComponent},
   {path: 'mesas/:paramId', component: MesaAddProductComponent},
   {path: 'products/:paramId', component: ProductDetailsComponent},
-  {path: '', redirectTo: 'products', pathMatch: 'full'},
+  {path: '', redirectTo: 'mesas', pathMatch: 'full'},
 ];
 
 @NgModule({

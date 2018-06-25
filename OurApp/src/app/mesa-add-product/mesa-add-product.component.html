@@ -1,13 +1,34 @@
-<input class="form-control mr-sm-2" type="text" placeholder="Search..." (keyup)="Searching($event)" size="70" style="text-align:center;">
+<input
+    class="form-control mr-sm-2"
+    type="text"
+    placeholder="Search..."
+    (keyup)="Searching($event)"
+    size="70"
+    style="text-align:center;"
+>
 <br>
-<section class="row ">
-    <app-app-product-show-mesa [productToShow]="product" [mesa]="mesa" class="col-lg-3 col-md-6 col-sm-12"
-     style="width: 18rem;" *ngFor="let product of products; let i of index">
+<section class="row">
+    <app-app-product-show-mesa
+        [productToShow]="product"
+        [mesa]="mesa"
+        class="col-lg-3 col-md-6 col-sm-12"
+        style="width: 18rem; margin-bottom: 10px;"
+        *ngFor="let product of products; let i of index"
+    >
     </app-app-product-show-mesa>
-  </section>
-  <br>
-  <div style="text-align: center">
-    <button (click)=goBack() class="btn btn-primary">Go back!</button>
-    <button routerLink="Bill" class="btn btn-primary">Bill</button>
-  </div>
-
+</section>
+<br>
+<div style="text-align: center">
+    <button
+        (click)="goBack()"
+        class="btn btn-primary"
+    >
+        Go back!
+    </button>
+    <button
+        routerLink="Bill"
+        class="btn btn-primary"
+    >
+        Bill
+    </button>
+</div>

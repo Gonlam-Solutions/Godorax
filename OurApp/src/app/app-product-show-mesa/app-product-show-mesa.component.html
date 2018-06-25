@@ -1,11 +1,29 @@
-<button (click)=AddProduct() class="center card bg-dark text-white" style="max-width: 18rem;">
+<button
+    (click)="AddProduct()"
+    class="center card bg-dark text-white"
+    style="max-width: 18rem;"
+>
     <div class="card-header">
-      <h5 class="card-title"><strong>{{productToShow.name}}</strong></h5>
+        <h5 class="card-title">
+            <strong>{{productToShow.name}}</strong>
+        </h5>
     </div>
-    <img class="card-img" src = "{{productToShow.photo}}" height="180" width="180" alt="Card image cap"/>
-    <div class="card-img-overlay">
-    </div>
-  </button>
-  <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null" [dismissible]="false">
-      <strong>{{ successMessage }}</strong>
-  </ngb-alert>
+    <img
+        class="card-img"
+        src="{{productToShow.photo}}"
+        height="180"
+        width="180"
+        alt="Card image cap"
+    >
+    <div class="card-img-overlay"></div>
+</button>
+<div class="alert">
+    <ngb-alert
+        *ngIf="successMessage"
+        type="success"
+        (close)="successMessage = null"
+        [dismissible]="false"
+    >
+        <strong>{{ successMessage }}</strong>
+    </ngb-alert>
+</div>

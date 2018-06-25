@@ -1,25 +1,56 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- The content below is only a placeholder and can be replaced. -->
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 
         <div class="container">
-          <a class="navbar-brand" href="./"><b>GOLAMGIR</b></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="#navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-                <a class="nav-link" href="/mesas">TABLES <span class="sr-only">(current)</span></a>
-                </li>
-        <li class="nav-item">
-                <a class="nav-link" href="/products">PRODUCTS</a>
-              </li>
-            </ul>
-          </div>
-          </div>
-        </nav>
+            <a
+                class="navbar-brand"
+                href="./"
+            >
+                <b>GOLAMGIR</b>
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+                class="collapse navbar-collapse"
+                id="#navbarSupportedContent"
+            >
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="/mesas"
+                        >
+                            TABLES
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="/products"
+                        >
+                            PRODUCTS
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 <br>
+
 <!-- have deleted div class c -->
-<router-outlet></router-outlet>
+<div class="body">
+    <router-outlet></router-outlet>
+</div>
+<footer class="bg-dark footer text-white"></footer>

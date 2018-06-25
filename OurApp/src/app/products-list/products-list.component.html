@@ -1,9 +1,20 @@
-<input class="form-control mr-sm-2" type="text" placeholder="Search..." (keyup)="Searching($event)" size="70" style="text-align:center;">
+<input
+    class="form-control mr-sm-2"
+    type="text"
+    placeholder="Search..."
+    (keyup)="Searching($event)"
+    size="70"
+    style="text-align:center;"
+>
 <br>
-<section class="row ">
-  <app-product-show  [productToShow]="product" class=" col-lg-3 col-md-6 col-sm-12"
-   style="width: 18rem;" *ngFor="let product of products; let i of index">
-  </app-product-show>
+<section class="row">
+    <app-product-show
+        [productToShow]="product"
+        class="col-lg-3 col-md-6 col-sm-12"
+        style="width: 18rem; margin-bottom: 10px;"
+        *ngFor="let product of products; let i of index"
+    >
+    </app-product-show>
 </section>
 
 <!-- [class.elevate]="hovered===i" (mouseover)="hovered=i"(mouseout)="hovered=-1" -->
