@@ -2,7 +2,7 @@ import { DBService } from './../db.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductShowComponent } from './product-show/product-show.component';
@@ -46,6 +46,7 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     HttpModule,
+    ReactiveFormsModule,
   ],
   providers: [DBService],
   bootstrap: [AppComponent]

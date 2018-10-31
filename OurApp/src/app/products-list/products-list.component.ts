@@ -1,6 +1,7 @@
 import { DBService } from './../../db.service';
-import { Component, OnInit, HostListener, Directive } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-products-list',
@@ -10,8 +11,9 @@ import { Product } from '../../models';
 export class ProductsListComponent implements OnInit {
   products: Product[] = [];
   Allproducts: Product[] = [];
-  searchElement;
-  constructor(private DbService: DBService) {  }
+  ProductSearch$ = new FormControl('');
+
+  constructor(private DbService: DBService) {}
 
   ngOnInit() {
     this.DbService.getAllProducts().subscribe(products => {
@@ -19,9 +21,9 @@ export class ProductsListComponent implements OnInit {
       this.Allproducts = products;
     });
   }
-  Searching(event) {
+  Searching() {
     this.products = this.Allproducts.filter(product => {
-      return product.name.includes(event.target.value);
+      return product.name.includes(this.ProductSearch$.value);
     });
   }
 }

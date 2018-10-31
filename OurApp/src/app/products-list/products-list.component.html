@@ -2,10 +2,12 @@
     class="form-control mr-sm-2"
     type="text"
     placeholder="Search..."
-    (keyup)="Searching($event)"
-    size="70"
+    size="56"
     style="text-align:center;"
+    [formControl]="ProductSearch$"
+    (keyup)="Searching()"
 >
+
 <br>
 <section class="row container col-center">
     <app-product-show
@@ -15,6 +17,5 @@
         *ngFor="let product of products; let i of index"
     >
     </app-product-show>
+    <!-- <h1>{{ ProductSearch$.value }}</h1> -->
 </section>
-
-<!-- [class.elevate]="hovered===i" (mouseover)="hovered=i"(mouseout)="hovered=-1" -->
