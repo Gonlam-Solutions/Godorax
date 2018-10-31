@@ -1,11 +1,11 @@
-<div class="row">
-  <button routerLink="{{mesa.tableNumber}}"  class="col-lg-8 btn btn-secondary col-center text-white"
+<div class="row container col-center">
+  <button routerLink="{{mesa.tableNumber}}"  class="col-lg-8 col-sm-12 btn btn-secondary col-center text-white"
    *ngFor="let mesa of mesas;" style="margin-bottom: 10px;">
     <h1 style="text-align: center; vertical-align: middle; line-height: 65px;">
       <span class="fa fa-cutlery"></span>
        Table {{mesa.tableNumber}}</h1>
   </button>
-  <button (click)="addTable()" class="col-lg-8 btn btn-secondary col-center text-warning" ><h1 style="text-align: center; vertical-align: middle; line-height: 65px;">
+  <button (click)="addTable()" class="col-lg-8 col-sm-12 btn btn-secondary col-center text-warning" ><h1 style="text-align: center; vertical-align: middle; line-height: 65px;">
     <span class="fa fa-plus-circle"></span>
     Add table</h1>
   </button>
