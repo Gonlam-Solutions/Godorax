@@ -1,52 +1,48 @@
 <!-- The content below is only a placeholder and can be replaced. -->
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <a
+        class="navbar-brand"
+        href="./"
+    >
+        <b>GOLAMGIR</b>
+    </a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="container">
-            <a
-                class="navbar-brand"
-                href="./"
-            >
-                <b>GOLAMGIR</b>
-            </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div
-                class="collapse navbar-collapse"
-                id="#navbarSupportedContent"
-            >
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a
-                            class="nav-link"
-                            href="/mesas"
-                        >
-                            TABLES
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                            class="nav-link"
-                            href="/products"
-                        >
-                            PRODUCTS
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+    <div
+        class="collapse navbar-collapse"
+        id="navbarContent"
+    >
+        <ul class="navbar-nav mr-auto">
+            <li [class.active]="currentUrl == '/mesas'" class="nav-item">
+                <a
+                    class="nav-link"
+                    href="/mesas"
+                >
+                    TABLES
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li [class.active]="currentUrl == '/products'" class="nav-item">
+                <a
+                    class="nav-link"
+                    href="/products"
+                >
+                    PRODUCTS
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <br>
 
 <!-- have deleted div class c -->
