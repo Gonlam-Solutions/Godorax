@@ -1,8 +1,10 @@
+import { DemoMaterialModule } from './material-module';
 import { DBService } from './../db.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { ProductShowComponent } from './product-show/product-show.component';
@@ -15,16 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { MesaAddProductComponent } from './mesa-add-product/mesa-add-product.component';
 import { AppProductShowMesaComponent } from './app-product-show-mesa/app-product-show-mesa.component';
-import { FormsModule} from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
-  {path: 'products', component: ProductsListComponent},
-  {path: 'mesas', component: MesaslistComponent},
-  {path: 'mesas/:paramId/Bill', component: MesaShowComponent},
-  {path: 'mesas/:paramId', component: MesaAddProductComponent},
-  {path: 'products/:paramId', component: ProductDetailsComponent},
-  {path: '', redirectTo: 'mesas', pathMatch: 'full'},
+  { path: 'products', component: ProductsListComponent },
+  { path: 'mesas', component: MesaslistComponent },
+  { path: 'mesas/:paramId/Bill', component: MesaShowComponent },
+  { path: 'mesas/:paramId', component: MesaAddProductComponent },
+  { path: 'products/:paramId', component: ProductDetailsComponent },
+  { path: '', redirectTo: 'mesas', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -36,8 +38,7 @@ const routes: Routes = [
     MesaslistComponent,
     MesaShowComponent,
     MesaAddProductComponent,
-    AppProductShowMesaComponent,
-
+    AppProductShowMesaComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -47,8 +48,11 @@ const routes: Routes = [
     HttpClientModule,
     HttpModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    DemoMaterialModule
   ],
   providers: [DBService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

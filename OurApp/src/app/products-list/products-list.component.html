@@ -1,21 +1,19 @@
-<input
-    class="form-control mr-sm-2"
-    type="text"
-    placeholder="Search..."
-    size="56"
-    style="text-align:center;"
-    [formControl]="ProductSearch$"
-    (keyup)="Searching()"
->
-
-<br>
-<section class="row container col-center">
-    <app-product-show
-        [productToShow]="product"
-        class="col-lg-3 col-md-6 col-sm-12"
-        style="margin-bottom: 10px;"
-        *ngFor="let product of products; let i of index"
+<mat-form-field class="example-full-width">
+    <input matInput
+        type="text"
+        placeholder="Search..."
+        [formControl]="ProductSearch$"
+        (keyup)="Searching()"
     >
-    </app-product-show>
-    <!-- <h1>{{ ProductSearch$.value }}</h1> -->
-</section>
+</mat-form-field>
+    <br>
+    <section class="row container col-center">
+        <app-product-show
+            [productToShow]="product"
+            class="col-lg-3 col-md-6 col-sm-12"
+            style="margin-bottom: 10px;"
+            *ngFor="let product of products; let i of index"
+        >
+        </app-product-show>
+        <!-- <h1>{{ ProductSearch$.value }}</h1> -->
+    </section>

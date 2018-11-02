@@ -1,11 +1,11 @@
-<input
-    class="form-control mr-sm-2"
-    type="text"
-    placeholder="Search..."
-    (keyup)="Searching($event)"
-    size="70"
-    style="text-align:center;"
->
+<mat-form-field class="example-full-width">
+  <input matInput
+      type="text"
+      placeholder="Search..."
+      [formControl]="ProductSearch$"
+      (keyup)="Searching()"
+  >
+</mat-form-field>
 <br>
 <section class="row container col-center">
     <app-app-product-show-mesa

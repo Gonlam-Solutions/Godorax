@@ -5,6 +5,7 @@ import { Product } from '../../models';
 import { ProductService } from '../product.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {AlertCenterService, Alert, AlertType} from 'ng2-alert-center';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class MesaAddProductComponent implements OnInit {
   products: Product[] = [];
   Allproducts: Product[] = [];
   mesa: Number;
-
+  ProductSearch$ = new FormControl('');
   constructor (private DbService: DBService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
@@ -35,9 +36,9 @@ export class MesaAddProductComponent implements OnInit {
     this.location.back();
   }
 
-  Searching(event) {
+  Searching() {
     this.products = this.Allproducts.filter(product => {
-      return product.name.includes(event.target.value);
+      return product.name.includes(this.ProductSearch$.value);
     });
   }
 }
