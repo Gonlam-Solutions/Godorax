@@ -1,13 +1,17 @@
-.bottom{
+.bottom {
   position: absolute;
   bottom: 0px;
   right: 5px;
 }
 .center {
- margin: auto;
- padding: 10px;
+  margin: auto;
+  padding: 10px;
 }
 
-.alert{
+.alert {
   min-height: 6rem;
+}
+
+.button {
+  max-width: 24rem;
 }

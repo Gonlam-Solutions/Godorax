@@ -1,9 +1,12 @@
-.col-center{
+.col-center {
   float: none;
   margin: 0 auto;
   margin-bottom: 20px;
 }
-.right{
+.right {
   position: absolute;
   right: 2.5%;
+}
+.center {
+  text-align: center;
 }

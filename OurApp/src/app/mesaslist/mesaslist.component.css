@@ -1,7 +1,14 @@
-.col-center{
+.col-center {
   float: none;
   margin: 0 auto;
-
 }
 
+.button {
+  margin-bottom: 10px;
+}
 
+.button_title {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 65px;
+}

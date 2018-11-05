@@ -11,3 +11,11 @@
 .example-full-width {
   width: 100%;
 }
+.product {
+  width: 18rem;
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+}
